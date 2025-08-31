@@ -1,0 +1,64 @@
+{
+  "name": "find-code",
+  "displayName": "Find Code",
+  "description": "Find code location from browser elements",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/find-code.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "find-code.startServer",
+        "title": "Start Find Code Server",
+        "category": "Find Code"
+      },
+      {
+        "command": "find-code.stopServer",
+        "title": "Stop Find Code Server",
+        "category": "Find Code"
+      },
+      {
+        "command": "find-code.showStatus",
+        "title": "Show Find Code Status",
+        "category": "Find Code"
+      }
+    ],
+    "statusBar": {
+      "items": [
+        {
+          "id": "find-code-status",
+          "name": "Find Code Status",
+          "text": "$(search) Find Code",
+          "tooltip": "Click to show Find Code status",
+          "command": "find-code.showStatus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^16.11.7",
+    "eslint": "^8.0.1",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "ws": "^8.13.0",
+    "source-map": "^0.7.3"
+  }
+}
